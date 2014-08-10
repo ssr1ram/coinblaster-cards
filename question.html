@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    </head>
+    <body style='padding:0px 5px'>
+        <h2>Please answer this question</h2>
+        <p>In which city would you like to see a Bitcoin ATM</p>
+        <div class='radio'>
+            <label>
+                <input type='radio' name='blastq' id='q1' value='chicago'>
+                Chicago
+            </label>
+        </div>
+        <div class='radio'>
+            <label>
+                <input type='radio' name='blastq' id='q2' value='newyork'>
+                New York
+            </label>
+        </div>
+        <div class='radio'>
+            <label>
+                <input type='radio' name='blastq' id='q3' value='sanfran'>
+                San Francisco
+            </label>
+        </div>
+        <hr>
+        <div>
+            <div class='pull-left errspot' style='color:red'>
+            </div>
+            <div class='pull-right'>
+                <button class='btn-info' onclick="checkanswer();">Join the Blast</button>
+            </div>
+        </div>
+
+        <script type='text/javascript' src='http://code.jquery.com/jquery-2.1.1.min.js'></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script type='text/javascript' src='coinblaster-hurdle.js'></script>
+        <script>
+            function checkanswer() {
+                var v = $('input:radio[name=blastq]:checked').val();
+                if (!v) {
+                    $(".errspot").html("Please answer this to join blast");
+                } else {
+                    blastjoin({answer: v});
+                }
+
+            }
+
+        </script>
+    </body>
+</html>
